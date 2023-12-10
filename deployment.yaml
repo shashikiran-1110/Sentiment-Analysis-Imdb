@@ -1,0 +1,19 @@
+# Check Minikube status
+minikube status
+
+# Create a Kubernetes deployment
+kubectl create deployment sentimentanalysisapp --image=sentimentanalysisapp:latest
+
+# Check the deployment and pods
+kubectl get deployments
+kubectl get pods
+
+# Describe the deployment for more details
+kubectl describe deployments sentimentanalysisapp
+
+# Create a NodePort service
+kubectl create service nodeport sentimentanalysisapp --tcp=5000:5000
+
+# Get the external IP and port
+minikube ip
+kubectl get service
